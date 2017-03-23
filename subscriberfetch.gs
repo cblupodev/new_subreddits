@@ -1,5 +1,5 @@
 // I get this error when I run this function "Exceeded maximum execution time"
-function getSubscribers() {
+function subs() {
   Logger.log("asdf");
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName("Sheet1");
