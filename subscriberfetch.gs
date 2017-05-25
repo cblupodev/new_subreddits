@@ -1,22 +1,4 @@
-// I get this error when I run this function "Exceeded maximum execution time"
-function subs() {
-  Logger.log("asdf");
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Sheet1");
-  var urls = sheet.getRange('C1:C10').getValues(); // the url column
-  var newValues = []; // the column to store subscribers
-  for (var row = 0; row < urls.length; row++) {
-    
-    Logger.log(row);
-    if (urls[row] !== '') {
-      var newV = getSubscriber(urls[row]);
-      newValues.push([newV]);
-    }
-  }
-  sheet.getRange('D1:D10').setValues(newValues);
-}
-
-function getSubscriber(url) {
+function subs(url) {
   Logger.log(url);
   try {
     var resp = UrlFetchApp.fetch(url);
